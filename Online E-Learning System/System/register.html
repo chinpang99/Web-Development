@@ -1,0 +1,234 @@
+﻿<!--
+author: Boostraptheme
+author URL: https://boostraptheme.com
+License: Creative Commons Attribution 4.0 Unported
+License URL: https://creativecommons.org/licenses/by/4.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Bootstrap Admin Template </title>
+    <link rel="shortcut icon" href="admin/img/favicon.ico">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin/css/font-icon-style.css">
+    <link rel="stylesheet" href="admin/css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="admin/css/pages/login.css">
+    
+    <!-- Password stylesheets -->
+    <style>
+    
+    /* The message box is shown when the user clicks on the password field */
+	#message {
+	    display:none;
+	    background: #f1f1f1;
+	    color: #000;
+	    position: fixed;
+	    padding: 20px;
+	    margin-top: 10px;
+	}
+	
+	#message p {
+	    padding: 10px 35px;
+	    font-size: 18px;
+	}
+	
+	/* Add a green text color and a checkmark when the requirements are right */
+	.valid {
+	    color: green;
+	}
+	
+	.valid:before {
+	    position: relative;
+	    left: -35px;
+	    content: "✔";
+	}
+	
+	/* Add a red text color and an "x" when the requirements are wrong */
+	.invalid {
+	    color: red;
+	}
+	
+	.invalid:before {
+	    position: relative;
+	    left: -35px;
+	    content: "✖";
+	}
+
+    </style>
+</head>
+
+<body> 
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================--> 
+      <section class="hero-area" style="background-image:url('admin/img/b.jpg') ">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 ">
+                <div class="contact-h-cont">
+                  <h3 class="text-center"><img src="admin/img/logo.png" class="img-fluid" alt=""></h3><br>
+                  <form method="post" action="register.php" id="form">
+                    <div class="form-group">
+                      <label for="username">Username *</label>
+                      <input type="text" class="form-control" id="username" placeholder="Enter Username" required name="username">
+                      
+                      <div id="feedback"></div>
+                      
+                    </div>  
+                    <div class="form-group">
+                      <label for="password">Password *</label>
+                      <input class="form-control" type="password" id="password" placeholder="Enter Password" required name="password">
+                      <div id="message">
+  						<h3>Password must contain the following:</h3>
+  						<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  						<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  						<p id="number" class="invalid">A <b>number</b></p>
+  						<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+	 				  </div>
+                    </div>  
+                    <div class="form-group">
+                      <label for="fullname">Fullname *</label>
+                      <input type="text" class="form-control" id="fullname" placeholder="Enter Fullname" required name="fullname"> 
+                       <script>
+                       function Validate() 
+                       {
+                       var val = document.getElementById('fullname').value;
+                       
+                       if (!val.match(/^[a-zA-Z]+$/)) 
+                       {
+                       	alert('Only alphabets are allowed');
+                       	return false;
+                       	}
+                       	return true;
+                       	}
+                       </script>
+                    </div>
+                    <div class="form-group">
+                      <label for="NRIC">NRIC Number *</label>
+                      <input type="text" class="form-control" id="NRIC" placeholder="Enter NRIC Number" required 
+                      pattern="[0-9]{12}" title="Only Allowed in the format of XXXXXX-XX-XXXX" name="nric"> 
+                    </div>  
+                    <div class="form-group">
+                      <label for="email">Email Address *</label>
+                      <input type="text" class="form-control" id="email" placeholder="Enter Email Address" required
+                      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" title="PLEASE USE EMAIL FORMAT 'xxxx@xxx.com'" name="email"> 
+                    </div>                   
+                    <div class="form-group">
+                      <label for="accesscode">Class Access Code *</label>
+                      <input type="text" class="form-control" id="accesscode" placeholder="Enter Class Access Code" required name="accesscode"> 
+                    </div>  
+                    <button class="btn btn-general btn-white" role="button"><i fa fa-right-arrow></i>Register !!!</button>                  
+                    <button class="btn btn-general btn-red" role="button" onclick="window.location.href='index.php'"><i fa fa-right-arrow></i>Cancel</button>                    
+                    </form>
+                </div>
+            </div>
+          </div>  
+        </div>
+      </section>
+    
+	<!-- Script For Password Block -->  
+    <script>
+      var myInput = document.getElementById("password");
+	  var letter = document.getElementById("letter");
+	  var capital = document.getElementById("capital");
+	  var number = document.getElementById("number");
+	  var length = document.getElementById("length");
+
+	  // When the user clicks on the password field, show the message box
+	  myInput.onfocus = function() {
+    	document.getElementById("message").style.display = "block";
+	  }
+
+	 // When the user clicks outside of the password field, hide the message box
+	 myInput.onblur = function() {
+	    document.getElementById("message").style.display = "none";
+	 }
+	
+	 // When the user starts to type something inside the password field
+	 myInput.onkeyup = function() {
+	 // Validate lowercase letters
+	 var lowerCaseLetters = /[a-z]/g;
+	 if(myInput.value.match(lowerCaseLetters)) {  
+	   letter.classList.remove("invalid");
+	   letter.classList.add("valid");
+	 } else {
+	   letter.classList.remove("valid");
+	   letter.classList.add("invalid");
+	 }
+	  
+	 // Validate capital letters
+	 var upperCaseLetters = /[A-Z]/g;
+	 if(myInput.value.match(upperCaseLetters)) {  
+	   capital.classList.remove("invalid");
+	   capital.classList.add("valid");
+	 } else {
+	   capital.classList.remove("valid");
+	   capital.classList.add("invalid");
+	 }
+	
+	 // Validate numbers
+	 var numbers = /[0-9]/g;
+	 if(myInput.value.match(numbers)) {  
+	   number.classList.remove("invalid");
+	   number.classList.add("valid");
+	 } else {
+	   number.classList.remove("valid");
+	   number.classList.add("invalid");
+	 }
+	  
+	 // Validate length
+	 if(myInput.value.length >= 8) {
+	   length.classList.remove("invalid");
+	   length.classList.add("valid");
+	 } else {
+	   length.classList.remove("valid");
+	   length.classList.add("invalid");
+	 }
+	}
+
+    </script>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    
+    <script>
+    
+	    $(document).ready(function()
+	    {
+	    	
+	    	$('#username').keyup(function()
+	    	{
+				$.post('check.php', { username: form.username.value }, 
+	    		function(result)
+	    		{
+	    			$('#feedback').html(result).show();
+	    		});
+	    			
+	    	});
+	    });
+        
+    </script>
+    
+    <!--Global Javascript -->
+    <script src="admin/js/jquery.min.js"></script>
+    <script src="admin/js/tether.min.js"></script>
+    <script src="admin/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,493 @@
+<!--
+author: Boostraptheme
+author URL: https://boostraptheme.com
+License: Creative Commons Attribution 4.0 Unported
+License URL: https://creativecommons.org/licenses/by/4.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Bootstrap Admin Template </title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/ui-elements/card.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui-elements/button.css">
+</head>
+
+<body> 
+
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->        
+    <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="search-result.html" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <a href="index.html" class="navbar-brand">
+                            <div class="brand-text brand-big hidden-lg-down"><img src="img/logo-white.png" alt="Logo" class="img-fluid"></div>
+                            <div class="brand-text brand-small"><img src="img/logo-icon.png" alt="Logo" class="img-fluid"></div>
+                        </a>
+                        <a id="toggle-btn" href="#" class="menu-btn active">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                    <!-- Notifications-->
+                    <li class="nav-item dropdown"> 
+                        <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><span class="noti-numb-bg"></span><span class="badge">12</span></a>
+                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope bg-red"></i>You have 6 new messages </div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-twitter bg-skyblue"></i>You have 2 followers</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-upload bg-blue"></i>Server Rebooted</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item nav-link">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-twitter bg-skyblue"></i>You have 2 followers</div>
+                                        <div class="notification-time"><small>10 minutes ago</small></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                        </ul>
+                    </li>
+                    <!-- Messages                        -->
+                    <li class="nav-item dropdown"> <a id="messages" class="nav-link logout" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope-o"></i><span class="noti-numb-bg"></span><span class="badge">10</span></a>
+                        <ul aria-labelledby="messages" class="dropdown-menu">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5 msg-nav-h3">Jason Doe</h3><span>Sent You Message</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5 msg-nav-h3">Frank Williams</h3><span>Sent You Message</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5 msg-nav-h3">Ashley Wood</h3><span>Sent You Message</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages    </strong></a></li>
+                        </ul>
+                    </li> 
+                    <li class="nav-item dropdown"><a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                        <ul aria-labelledby="profile" class="dropdown-menu profile">
+                            <li>
+                                <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">Steena Ben</h3><span>steenaben@Businessbox.com</span>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-user "></i>My Profile</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="email.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope-o"></i>Inbox</div> 
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-cog"></i>Setting</div>
+                                    </div>
+                                </a>
+                                <hr>
+                            </li>
+                            <li>
+                                <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-power-off"></i>Logout</div>
+                                    </div>
+                                </a> 
+                            </li>
+                        </ul>
+                    </li>
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+
+        <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar">
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h4">Steena Ben</h1>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li class="active"> <a href="index.html"><i class="icon-home"></i>Home</a></li>
+                <li><a href="#materials" aria-expanded="false" data-toggle="collapse"> <i class="icon-list"></i>Materials </a>
+                    <ul id="materials" class="collapse list-unstyled">
+                        <li><a href="supplementarymaterial_create.php">Create Materials</a></li> 
+                        <li><a href="supplementarymaterial.php">View Materials</a></li>  
+                    </ul>
+                </li>
+                <li> <a href="chart.html"> <i class="fa fa-question"></i>Quiz </a></li>
+                <li><a href="#announcement" aria-expanded="false" data-toggle="collapse"> <i class="icon-website"></i>Announcement </a>
+                    <ul id="announcement" class="collapse list-unstyled">
+                        <li><a href="announcement_create.php">Create Announcement</a></li>   
+                		<li> <a href="chart.html">Manage Announcement </a></li>
+                    </ul>
+                <li><a href="#students" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>Students </a>
+                    <ul id="students" class="collapse list-unstyled">
+                        <li><a href="student_list.php">Student's Information</a></li>   
+                		<li> <a href="chart.html">Student's Performance </a></li>
+                    </ul>
+                 <li><a href="#classroom" aria-expanded="false" data-toggle="collapse"> <i class="icon-home"></i>Classroom </a>
+                    <ul id="classroom" class="collapse list-unstyled">
+                        <li><a href="classroom_create.php">Create Classroom</a></li> 
+                        <li><a href="classroom_list.php">View Classroom</a></li>  
+                    </ul>
+                </li>
+            </ul><span class="heading">Extras</span>
+            <ul class="list-unstyled"> 
+                <li> <a href="../admin/login.html"> <i class="fa fa-sign-out"></i>Log Out </a></li>
+            </ul>
+        </nav>
+
+        <div class="content-inner">
+
+            <!--***** REPORT-1 *****-->     
+            <div class="row" id="report1">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block card-header card-chart">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 9,220</h2>
+                                <span class="text-muted">Todays Registered</span>
+                            </div>
+                            <span class="text-success">80%</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>Last month 10% Growth</small></p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block card-header card-chart">
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-danger"></i> 5,530</h2>
+                                <span class="text-muted">Number of View (Today)</span>
+                            </div>
+                            <span class="text-danger">43%</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 43%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>Last month 10% Growth</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block card-header card-chart"> 
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-warning"></i> 3,620</h2>
+                                <span class="text-muted">Total Number of Students </span>
+                            </div>
+                            <span class="text-warning">53%</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 53%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>Last month 10% Growth</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-block card-header card-chart"> 
+                            <div class="text-left report1-cont">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 82,600</h2>
+                                <span class="text-muted">Total Number of Views</span>
+                            </div>
+                            <span class="text-info">70%</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p><small>Last month 10% Growth</small></p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+ 
+            <!--***** REPORT-2 *****-->     
+            <div class="row" id="report2">
+                <div class="col-md-6 mt-2">
+                    <div class="card card-c1">
+                        <div class="dropdown pull-right menu-sett-card" > 
+                            <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v men"></i> 
+                            </a>
+                            <ul aria-labelledby="notifications" class="dropdown-menu">
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
+                                </li> 
+                            </ul>
+                        </div>
+                        <div class="card-block">
+                            <canvas id="pie-chart1" width="400" height="400"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats" style="font-size:medium">
+                                <i class="fa fa-clock-o"></i> updated 4 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 2.5%">
+                    <div class="card card-c2" style="width: 154%; height:96%">
+                        <div class="dropdown pull-right menu-sett-card" > 
+                            <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v men"></i> 
+                            </a>
+                            <ul aria-labelledby="notifications" class="dropdown-menu">
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">Edit</a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">FAQ</a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" href="#" class="dropdown-item nav-link">Support</a>
+                                </li> 
+                            </ul>
+                        </div>
+                        <div class="header">
+                            <h4 class="title" style="text-transform:uppercase">Teacher's Announcement</h4>
+                            <p class="category" style="margin-top:1%">Latest News Update</p>
+                            <hr>
+                        </div>
+                        <div class="content newsf-list">
+                            <ul class="list-unstyled">
+                                <li class="border border-primary">
+                                    <a rel="nofollow " href="#" class=" d-flex">
+                                        <div class="news-f-img"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                        <div class="msg-body">
+                                            <h3 class="h5 msg-nav-h3">New Innovation world</h3>
+                                            <small>Tech soft is great innovation for...</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="border border-success">
+                                    <a rel="nofollow" href="#" class=" d-flex">
+                                        <div class="news-f-img"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                        <div class="msg-body">
+                                            <h3 class="h5 msg-nav-h3">Modified hand-cart steering</h3>
+                                            <small>The idea is to incorporate easy...</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="border border-info">
+                                    <a rel="nofollow" href="#" class=" d-flex">
+                                        <div class="news-f-img"> <img src="img/avatar-4.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                        <div class="msg-body">
+                                            <h3 class="h5 msg-nav-h3">Low cost Modern printer</h3>
+                                            <small>A dot matrix printer modified at...</small>
+                                        </div>
+                                    </a>
+                                </li> 
+
+                            </ul> 
+                        </div>
+                    </div>
+                </div>          
+            	</div>
+
+            <!--***** REPORT-4 *****-->    
+            <div class="row" id="report4">
+                <div class="col-md-4 mt-0" id="card-2">
+                    <div class="card hovercard">
+                        <div class="cardheader"></div>
+                        <div class="avatar">
+                            <img alt="" src="img/avatar-1.jpg" class="img-fluid">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a target="_blank" href="#">Steena Ben</a>
+                            </div>
+                            <div class="desc">Passionate designer</div>
+                            <div class="desc">Curious developer</div>
+                            <div class="desc">Tech geek</div>
+                        </div>
+                        <div class="bottom">
+                        	<a href="mailto:ben10chia@yahoo.com" class="btn-social btn-email" style="background-color:blue"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-0" id="card-2">
+                    <div class="card hovercard">
+                        <div class="cardheader"></div>
+                        <div class="avatar">
+                            <img alt="" src="img/avatar-2.jpg" class="img-fluid">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a target="_blank" href="#">Steena Ben</a>
+                            </div>
+                            <div class="desc">Passionate designer</div>
+                            <div class="desc">Curious developer</div>
+                            <div class="desc">Tech geek</div>
+                        </div>
+                        <div class="bottom">
+							<a href="mailto:ben10chia@yahoo.com" class="btn-social btn-email" style="background-color:blue"><i class="fa fa-envelope"></i></a>                        
+						</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-0" id="card-2">
+                    <div class="card hovercard">
+                        <div class="cardheader"></div>
+                        <div class="avatar">
+                            <img alt="" src="img/avatar-2.jpg" class="img-fluid">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a target="_blank" href="#">Steena Ben</a>
+                            </div>
+                            <div class="desc">Passionate designer</div>
+                            <div class="desc">Curious developer</div>
+                            <div class="desc">Tech geek</div>
+                        </div>
+                        <div class="bottom">
+                                <a href="mailto:ben10chia@yahoo.com" class="btn-social btn-email" style="background-color:blue"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>				
+            </div> 
+            <!--***** FOOTER *****-->    
+            <div class="row" id="report4">
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-fb">
+                        <i class="fa fa-facebook"></i>
+                        <div>3250 +</div>
+                        <p>Likes</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-tw">
+                        <i class="fa fa-twitter"></i>
+                        <div>2345 +</div>
+                        <p>Following</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-gp">
+                        <i class="fa fa-google-plus"></i>
+                        <div>1253 +</div>
+                        <p>Followers</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center social-bottom sb-in">
+                        <i class="fa fa-instagram"></i>
+                        <div>4524 +</div>
+                        <p>Likes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script> 
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+    
+    <!--Core Javascript -->
+    <script src="js/mychart.js"></script>
+</body>
+
+</html>
